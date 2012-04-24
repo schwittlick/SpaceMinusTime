@@ -1,5 +1,6 @@
 package mvc.view;
 
+import mvc.model.Ribbon;
 import peasy.PeasyCam;
 import processing.core.PApplet;
 import processing.core.PVector;
@@ -11,7 +12,8 @@ public class View {
 	PeasyCam cam;
 
 	PVector[] particles;
-
+	
+	
 	public View(PApplet parent) {
 
 		this.p = parent;
@@ -21,6 +23,7 @@ public class View {
 		cam.rotateX(p.radians(90));
 		cam.rotateZ(p.radians(180));
 		cam.setActive(false);
+		
 	}
 
 	public void draw() {
