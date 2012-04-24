@@ -1,15 +1,7 @@
 package run;
 
 import mvc.controller.Controller;
-import peasy.PeasyCam;
 import processing.core.PApplet;
-import toxi.geom.Rect;
-import toxi.geom.Vec2D;
-import toxi.geom.Vec3D;
-import toxi.physics.VerletParticle;
-import toxi.physics.VerletPhysics;
-import toxi.physics.VerletSpring;
-import toxi.physics.behaviors.GravityBehavior;
 
 /**
  * 
