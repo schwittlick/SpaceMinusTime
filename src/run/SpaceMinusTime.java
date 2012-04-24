@@ -22,7 +22,7 @@ public class SpaceMinusTime extends PApplet {
 
 	PeasyCam cam;
 	VerletPhysics physics;
-	int roadLength = 300;
+	int roadLength = 50;
 	VerletParticle[] particles;
 	VerletSpring[] springs;
 
@@ -30,12 +30,13 @@ public class SpaceMinusTime extends PApplet {
 		size(500, 300, P3D);
 		cam = new PeasyCam(this, 200);
 		physics = new VerletPhysics();
-		physics.addBehavior(new GravityBehavior(new Vec3D(0, 0.5f, 0)));
+		physics.addBehavior(new GravityBehavior(new Vec3D(0, 1, 0)));
 		initParticles();
 	}
 
 	public void draw() {
 		background(0);
+		drawAxis();
 		strokeWeight(1);
 		stroke(170);
 		physics.update();
@@ -45,16 +46,24 @@ public class SpaceMinusTime extends PApplet {
 		strokeWeight(3);
 		stroke(255);
 		for(int i=0; i<particles.length; i++){
-			point(particles[i].x, particles[i].y);
+			//point(particles[i].x, particles[i].y);
 		}
+		
+		noStroke();
+		fill(255, 90);
+		beginShape(TRIANGLE_STRIP);
+		for(int i=0; i<particles.length; i++){
+			vertex(particles[i].x, particles[i].y);
+		}
+		endShape();
 	}
 
 	private void initParticles() {
 		particles = new VerletParticle[roadLength]; 
 		springs = new VerletSpring[roadLength-2];
 		for(int i=0; i<roadLength; i+=2){
-			particles[i] = new VerletParticle(new Vec3D(-30, 30*i, 0));
-			particles[i+1] = new VerletParticle(new Vec3D(30, 30*i, 0));
+			particles[i] = new VerletParticle(new Vec3D(-50, 30*i, 30));
+			particles[i+1] = new VerletParticle(new Vec3D(50, 30*i, 30));
 			physics.addParticle(particles[i]);
 			physics.addParticle(particles[i+1]);
 		}
@@ -64,5 +73,15 @@ public class SpaceMinusTime extends PApplet {
 		}
 		particles[0].lock();
 		particles[1].lock();	
+	}
+	
+	private void drawAxis(){
+		strokeWeight(1);
+		stroke(255, 0, 0);
+		line(0, 0, 0, 20, 0, 0);
+		stroke(0, 255, 0);
+		line(0, 0, 0, 0, 20, 0);
+		stroke(0, 0, 255);
+		line(0, 0, 0, 0, 0, 20);
 	}
 }
