@@ -10,6 +10,14 @@ import toxi.physics.VerletPhysics;
 import toxi.physics.VerletSpring;
 import toxi.physics.behaviors.GravityBehavior;
 
+/**
+ * 
+ * @author Marcel Schwittlick
+ * @date 24.04.2012
+ * 
+ * This is more or less private studies, but feel free to have a look.
+ *
+ */
 public class SpaceMinusTime extends PApplet {
 
 	PeasyCam cam;
