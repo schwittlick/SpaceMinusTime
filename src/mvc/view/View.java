@@ -1,4 +1,4 @@
-package view;
+package mvc.view;
 
 public class View {
 
