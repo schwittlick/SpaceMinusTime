@@ -24,7 +24,7 @@ public class Model {
 
 		physics = new VerletPhysics();
 		physics.addBehavior(new GravityBehavior(new Vec3D(0, 1, 0)));
-		//physics.setWorldBounds(Rect.fromCenterExtent(arg0, arg1));ss
+		//physics.setWorldBounds(Rect.fromCenterExtent(arg0, arg1));
 
 		ribbon = new Ribbon(p, physics, ribbonLength, new Vec3D(0, 0, 400));
 
