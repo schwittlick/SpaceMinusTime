@@ -23,9 +23,8 @@ public class Model {
 		this.p = parent;
 
 		physics = new VerletPhysics();
-		physics.addBehavior(new GravityBehavior(new Vec3D(0, 1, 0)));
+		physics.addBehavior(new GravityBehavior(new Vec3D(0, 1, 1)));
 		//physics.setWorldBounds(Rect.fromCenterExtent(arg0, arg1));
-		//heytest
 
 		ribbon = new Ribbon(p, physics, ribbonLength, new Vec3D(0, 0, 400));
 
