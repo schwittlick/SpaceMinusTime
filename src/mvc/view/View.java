@@ -52,7 +52,7 @@ public class View {
 		p.fill(255, 90);
 		p.beginShape(p.TRIANGLE_STRIP);
 		for (int i = 0; i < particles.length; i++) {
-			p.vertex(particles[i].x, particles[i].y);
+			p.vertex(particles[i].x, particles[i].y, particles[i].z);
 		}
 		p.endShape();
 
